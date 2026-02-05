@@ -54,11 +54,14 @@ museoscyl/
 ├── sync_museos.php               → Script para sincronizar/actualizar museos desde la API a la BD
 ├── museoscyl.sql                 → Script SQL para crear la base de datos y tablas
 ├── README.md                     → Documentación del proyecto
-│
+├── .gitignore                    → Archivo para que no se suba a git archivo con claves
+├── cron.bat                      → Archivo ejecutable por el programador de tareas para que se actualice la web 1 vez al día 
+│ 
 ├── config/                       → Configuración del proyecto
 │   ├── config.php                → Constantes globales (BASE_URL, API, nombre del proyecto, etc.)
 │   ├── basedatos.php             → Conexión a MySQL con PDO
-│
+│   ├── recaptcha.php             → Archivo de guardado de claves por .gitignore
+│ 
 ├── controllers/                  → Controladores (lógica)
 │   ├── ControladorMuseo.php      → Listado, filtros y detalle de museos
 │   ├── ControladorUsuario.php    → Registro, login y logout
