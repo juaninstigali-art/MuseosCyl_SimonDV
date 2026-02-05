@@ -1,41 +1,17 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 04-02-2026 a las 19:34:07
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Base de datos: `museoscyl`
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `museoscyl`
---
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `favoritos`
---
-
 CREATE TABLE `favoritos` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `museo_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
 -- Volcado de datos para la tabla `favoritos`
---
 
 INSERT INTO `favoritos` (`id`, `usuario_id`, `museo_id`) VALUES
 (1, 2, 1),
@@ -43,12 +19,7 @@ INSERT INTO `favoritos` (`id`, `usuario_id`, `museo_id`) VALUES
 (3, 2, 3),
 (4, 10, 4);
 
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `museos`
---
-
 CREATE TABLE `museos` (
   `id` int(11) NOT NULL,
   `api_id` varchar(50) NOT NULL,
@@ -62,22 +33,14 @@ CREATE TABLE `museos` (
   `foto` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
 -- Volcado de datos para la tabla `museos`
---
-
 INSERT INTO `museos` (`id`, `api_id`, `nombre`, `localidad`, `latitud`, `longitud`, `horario`, `url`, `informacion_adicional`, `foto`) VALUES
 (1, '1284809940683', 'Aula Arqueológica del Castro de Las Cogotas', 'Cardeñosa', 40.74188340, -4.74315500, 'Del 01/01 al 31/12 - De Miercoles a Domingo y Festivos - De 10:00 a 14:00Aperturas extraordinarias para grupos concertados tambien fuera de dicho horario.', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1284809940683/DirectorioPadre', '<strong>Director o administrador del centro:</strong> Monica Garcinuño Sanchez<br/><br/><strong>Titular del centro:</strong> Ayuntamiento de Cardeñosa<br/><br/><strong>Responsable de la gestión del centro:</strong> Ayuntamiento de Cardeñosa<br/><br/><strong>Tipología del centro museístico:</strong> Arqueología<br/><br/><strong>Ámbito del centro museístico:</strong> Nacional<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Arqueología</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> Gratuita<ul></ul></li></ol>', NULL),
 (2, '1284872523711', 'Aula de Arqueología de Pintia-Poblado Vacceo', 'Peñafiel', 41.59278700, -4.11860600, 'Del 01/10 al 31/03 - De Martes a Domingo y Festivos - De 10:30 a 14:00 y de 16:30 a 19:00Del 01/04 al 30/09 - De Martes a Domingo y Festivos - De 10:30 a 14:00 y de 17:00 a 20:00Información sobre los días de cierreLunes', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1284872523711/DirectorioPadre', '<strong>Director o administrador del centro:</strong> Mª Inés Resina Martín<br/><br/><strong>Titular del centro:</strong> AYUNTAMIENTO DE PEÑAFIEL<br/><br/><strong>Responsable de la gestión del centro:</strong> TURIFIEL, S.L.<br/><br/><strong>Tipología del centro museístico:</strong> Arqueología<br/><br/><strong>Ámbito del centro museístico:</strong> Comarcal<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Arqueología</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> General<br/><strong>Importe:</strong> 2,50euros<ul></ul></li><li><strong>Tipo:</strong> Gratuita<ul><li>Menores (Menores de 12 años)</li></ul></li><li><strong>Tipo:</strong> Grupos<br/><strong>Descripción:</strong> Más de 20 personas<br/><strong>Importe:</strong> 2,00euros<ul></ul></li><li><strong>Tipo:</strong> Reducida<br/><strong>Descripción:</strong> Grupo<br/><strong>Importe:</strong> 1,50euros<ul><li>Menores (menores de 12 años)</li></ul></li></ol>', NULL),
 (3, '1284809941628', 'Casa José Zorrilla', 'Valladolid', 41.65643307, -4.72360611, 'Del 01/01 al 31/12 - De Martes a Sábado - De 10:00 a 14:00 y de 17:00 a 20:00Del 01/01 al 31/12 - Domingo y Festivos - De 10:00 a 14:00Las visitas son guiadas y duran aproximadamente 30 minutos. Comienzan a las horas en punto y a las medias.Información sobre los días de cierreDomingo (Tarde)Festivos (Tarde)Lunes', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1284809941628/DirectorioPadre', '<strong>Director o administrador del centro:</strong> María Paz Altés Melgar<br/><br/><strong>Titular del centro:</strong> Fundación Municipal de Cultura<br/><br/><strong>Responsable de la gestión del centro:</strong> María Paz Altés Melgar<br/><br/><strong>Tipología del centro museístico:</strong> Casa museo<br/><br/><strong>Ámbito del centro museístico:</strong> Nacional<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Biográfico</li><li>Arte</li><li>Artes decorativas</li><li>Historia</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Gratuita<ul></ul></li></ol>', NULL),
 (4, '1284809938730', 'Museo de la Ciencia de Valladolid', 'Valladolid', 41.63637395, -4.74735975, 'Del 01/09 al 30/06 - De Martes a Viernes - De 10:00 a 18:00Del 01/09 al 30/06 - Sábado y Festivos - De 10:00 a 19:00Del 01/09 al 30/06 - Domingo - De 10:00 a 15:00Del 01/07 al 31/08 - De Martes a Viernes - De 11:00 a 19:00Del 01/07 al 31/08 - Sábado y Festivos - De 11:00 a 20:00Del 01/07 al 31/08 - Domingo - De 11:00 a 15:00Información sobre los días de cierreLunes - CERRADOS, SALVO FESTIVOS', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1284809938730/DirectorioPadre', '<strong>Director o administrador del centro:</strong> Inés Rodríguez Hidalgo<br/><br/><strong>Titular del centro:</strong> Fundación Municipal de Cultura<br/><br/><strong>Responsable de la gestión del centro:</strong> Fundación Municipal de Cultura<br/><br/><strong>Tipología del centro museístico:</strong> Ciencia y tecnología<br/><br/><strong>Ámbito del centro museístico:</strong> Nacional<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Ciencia y Tecnología</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> Combinada<br/><strong>Descripción:</strong> EXPOSICIÓN PERMANENTE, EXPOSICIONES TEMPORALES, UNA SESION DEL PLANETARIO Y CASA DEL RIO<br/><strong>Importe:</strong> 9,00euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Sólo CASA DEL RIO<br/><strong>Importe:</strong> 2,00euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Sólo EXPOSICIÓN PERMANENTE<br/><strong>Importe:</strong> 4,00euros<ul></ul></li><li><strong>Tipo:</strong> Gratuita<br/><strong>Descripción:</strong> NIÑOS MENORES DE 8 AÑOS<ul></ul></li><li><strong>Tipo:</strong> Reducida<br/><strong>Descripción:</strong> COMBINADA PARA MENORES DE 16 AÑOS, MAYORES DE 65 Y FAMILIA NUMEROSA<br/><strong>Importe:</strong> 6,00euros<ul></ul></li><li><strong>Tipo:</strong> Reducida<br/><strong>Descripción:</strong> GRUPOS A PARTIR DE 15 PERSONAS, ESTUDIANTES CON CARNÉ Y CARNÉ JOVEN, CLUB DE LOS 60<br/><strong>Importe:</strong> 6,00euros<ul></ul></li><li><strong>Tipo:</strong> Reducida<br/><strong>Descripción:</strong> GRUPOS ESCOLARES, PERSONAS CON DISCAPACIDAD Y DOMINGOS Y MARTES<br/><strong>Importe:</strong> 5,00euros<ul></ul></li></ol>', NULL);
 
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `museos_cache`
---
-
 CREATE TABLE `museos_cache` (
   `id` int(11) NOT NULL,
   `api_id` varchar(50) NOT NULL,
@@ -92,10 +55,7 @@ CREATE TABLE `museos_cache` (
   `ultima_actualizacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
 -- Volcado de datos para la tabla `museos_cache`
---
-
 INSERT INTO `museos_cache` (`id`, `api_id`, `nombre`, `localidad`, `tipologia`, `latitud`, `longitud`, `horario`, `url`, `informacion_adicional`, `ultima_actualizacion`) VALUES
 (1, '1262861002715', 'Museo de Arqueología y Alfarería de Muelas del Pan', 'Muelas del Pan', '</strong> General<br/><br/><strong>Ámbito del centro museístico:</strong> Comarcal<br/><br/><strong>', 41.52292507, -5.97463131, 'Del 01/01 al 30/12 - Jueves y Viernes - De 14:00 a 16:30 y de 16:30 a 19:30Del 01/01 al 30/12 - Sábado - De 16:30 a 19:30ABIERTO CUALQUIER OTRO DIA CON CITA PREVIA', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1262861002715/DirectorioPadre', '<strong>Director o administrador del centro:</strong> LUIS ALBERTO MIGUEL ALONSO<br/><br/><strong>Titular del centro:</strong> AYUNTAMIENTO DE MUELAS DEL PAN<br/><br/><strong>Responsable de la gestión del centro:</strong> LUIS ALBERTO MIGUEL ALONSO<br/><br/><strong>Tipología del centro museístico:</strong> General<br/><br/><strong>Ámbito del centro museístico:</strong> Comarcal<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Arqueología</li><li>Etnología y Antropología</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> Gratuita<ul></ul></li></ol>', '2026-02-04 17:49:59'),
 (2, '1284809941733', 'Centro de Interpretación \'Casa Chacinera de Candelario\'', 'Candelario', '</strong> Etnología y antropología<br/><br/><strong>Ámbito del centro museístico:</strong> Comarcal<', 40.36744700, -5.74251300, 'Sábado - De 17:30 a 19:00Domingo - De 11:30 a 13:00Además de estos horarios, el centro se abre a demanda de grupos superiores a 20 personas, en días laborables.', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1284809941733/DirectorioPadre', '<strong>Director o administrador del centro:</strong> Ana María Muñoz Sánchez<br/><br/><strong>Titular del centro:</strong> Ayuntamiento de Candelario<br/><br/><strong>Responsable de la gestión del centro:</strong> Ayuntamiento de Candelario<br/><br/><strong>Tipología del centro museístico:</strong> Etnología y antropología<br/><br/><strong>Ámbito del centro museístico:</strong> Comarcal<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Etnología y Antropología</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas GUIADAS grupos adultos<br/><strong>Importe:</strong> 2,50euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas GUIADAS grupos menores de 12 años<br/><strong>Importe:</strong> 1,50euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas GUIADAS individual adultos<br/><strong>Importe:</strong> 3,00euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas GUIADAS individual menores de 12 años<br/><strong>Importe:</strong> 2,00euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas TEATRALIZADAS Grupos adultos<br/><strong>Importe:</strong> 3,50euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas TEATRALIZADAS grupos menores de 12 años<br/><strong>Importe:</strong> 3,00euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas TEATRALIZADAS :individual adultos<br/><strong>Importe:</strong> 4,50euros<ul></ul></li><li><strong>Tipo:</strong> General<br/><strong>Descripción:</strong> Visitas TEATRALIZADAS individual menores de 12 años<br/><strong>Importe:</strong> 3,50euros<ul></ul></li></ol>', '2026-02-04 17:49:59'),
@@ -276,12 +236,7 @@ INSERT INTO `museos_cache` (`id`, `api_id`, `nombre`, `localidad`, `tipologia`, 
 INSERT INTO `museos_cache` (`id`, `api_id`, `nombre`, `localidad`, `tipologia`, `latitud`, `longitud`, `horario`, `url`, `informacion_adicional`, `ultima_actualizacion`) VALUES
 (172, '1284809940543', 'Museo Textil de Val de San Lorenzo - C.I.T. La Comunal y Batán-Museo', 'Val de San Lorenzo', '</strong> Etnología y antropología<br/><br/><strong>Ámbito del centro museístico:</strong> Nacional<', 42.41704115, -6.12079024, 'Del 01/04 al 31/10 - De Miercoles a Viernes - De 11:00 a 14:00 y de 16:30 a 18:45Del 01/04 al 31/10 - De Martes a Viernes - De 11:00 a 14:00 y de 16:30 a 18:45Del 01/04 al 31/10 - De Sábado, Domingo y Festivos - De 11:00 a 14:00 y de 16:30 a 19:45Del 01/11 al 31/03 - De Miercoles a Viernes - De 11:00 a 14:00 y de 16:00 a 18:15Del 01/11 al 31/03 - De Sábado, Domingo y Festivos - De 11:00 a 14:00 y de 16:00 a 19:15Información sobre los días de cierre18/05LunesMartes (Mañana)', 'https://museoscastillayleon.jcyl.es/web/jcyl/MuseosCastillayLeon/es/Plantilla100Detalle/1258100892610/Institucion/1284809940543/DirectorioPadre', '<strong>Director o administrador del centro:</strong> Miguel Ángel Cordero López<br/><br/><strong>Titular del centro:</strong> Ayuntamiento de Val de San Lorenzo<br/><br/><strong>Responsable de la gestión del centro:</strong> Ayuntamiento de Val de San Lorenzo<br/><br/><strong>Tipología del centro museístico:</strong> Etnología y antropología<br/><br/><strong>Ámbito del centro museístico:</strong> Nacional<br/><br/><strong>Tipología de los fondos</strong><br/><ol><li>Etnología y Antropología</li></ol><strong>Tarifas</strong><br/><ol><li><strong>Tipo:</strong> General<br/><strong>Importe:</strong> 2,50euros<ul></ul></li><li><strong>Tipo:</strong> Reducida<br/><strong>Importe:</strong> 2,00euros<ul><li>Grupos (a partir de 15 personas)</li><li>Menores (de 8 años)</li></ul></li></ol>', '2026-02-04 17:50:00');
 
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuarios`
---
-
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
@@ -289,10 +244,7 @@ CREATE TABLE `usuarios` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
 -- Volcado de datos para la tabla `usuarios`
---
-
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`) VALUES
 (1, 'Usuario Prueba', 'test@test.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'),
 (2, 'fulano', 'fulano@dominio.com', '$2y$10$uLibEtrbQDUv0GvG49O4Iu5RvIMfMFZUj.YQhcMNIvuK/0NBKBjwW'),
@@ -305,28 +257,20 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`) VALUES
 (9, 'Ejemplo', 'ejemplo@dominio.com', '$2y$10$SBmA71bnuoXoOgZ5Yyz42OmR16uqcpMmpcg1uUfnt4REWOZ8sRm3u'),
 (10, 'juanito', 'juanito@dominio.com', '$2y$10$e/I7iOYWMpLiKG3srUAgzOtmNAsNIlKGb9/.3.CWtuBfL8WiJeh9K');
 
---
 -- Índices para tablas volcadas
---
 
---
 -- Indices de la tabla `favoritos`
---
 ALTER TABLE `favoritos`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `usuario_id` (`usuario_id`,`museo_id`),
   ADD KEY `museo_id` (`museo_id`);
 
---
 -- Indices de la tabla `museos`
---
 ALTER TABLE `museos`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `api_id` (`api_id`);
 
---
 -- Indices de la tabla `museos_cache`
---
 ALTER TABLE `museos_cache`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `api_id` (`api_id`),
@@ -340,46 +284,28 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
---
 -- AUTO_INCREMENT de las tablas volcadas
---
 
---
 -- AUTO_INCREMENT de la tabla `favoritos`
---
 ALTER TABLE `favoritos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
 -- AUTO_INCREMENT de la tabla `museos`
---
 ALTER TABLE `museos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
 -- AUTO_INCREMENT de la tabla `museos_cache`
---
 ALTER TABLE `museos_cache`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
---
 -- AUTO_INCREMENT de la tabla `usuarios`
---
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
---
 -- Restricciones para tablas volcadas
---
 
---
 -- Filtros para la tabla `favoritos`
---
 ALTER TABLE `favoritos`
   ADD CONSTRAINT `favoritos_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `favoritos_ibfk_2` FOREIGN KEY (`museo_id`) REFERENCES `museos` (`id`) ON DELETE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
